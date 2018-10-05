@@ -8,7 +8,7 @@
     
     <properties>
         <foo.version>0.0.1-SNAPSHOT</foo.version>
-        <bar.version>0.0.1-SNAPSHOT</bar.version>
+        <bar.version>0.0.1</bar.version>
     </properties>
     
 
