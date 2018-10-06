@@ -1,12 +1,15 @@
-// Load library 
-@Library('github.com/MartinNowak/jenkins-cancel-build-on-update@master') _
-
 pipeline {
-/*
+    libraries {
+	library identifier: 'github.com/MartinNowak/jenkins-cancel-build-on-update', retriever: modernSCM(
+	  [$class: 'GitSCMSource',
+	   remote: 'https://github.com/MartinNowak/jenkins-cancel-build-on-update.git'])	    
+        // Load library 
+        //lib('github.com/MartinNowak/jenkins-cancel-build-on-update')
+    }		
     options {
+	// Disable conccurent builds 
         disableConcurrentBuilds()
     }
-*/
     agent {
 	    kubernetes {
 	        // Change the name of jenkins-maven label to be able to use yaml configuration snippet
