@@ -1,6 +1,6 @@
 pipeline {
     libraries {
-	library identifier: 'github.com/MartinNowak/jenkins-cancel-build-on-update', retriever: modernSCM(
+	lib identifier: 'github.com/MartinNowak/jenkins-cancel-build-on-update', retriever: modernSCM(
 	  [$class: 'GitSCMSource',
 	   remote: 'https://github.com/MartinNowak/jenkins-cancel-build-on-update.git'])	    
         // Load library 
