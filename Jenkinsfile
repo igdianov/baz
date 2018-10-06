@@ -43,6 +43,7 @@ spec:
         }
         steps {
           // try cancel any previous builds from https://github.com/MartinNowak/jenkins-cancel-build-on-update
+          // uses implictly loaded shared library from global config
           cancelPreviousBuild()            
             
           container('maven') {
