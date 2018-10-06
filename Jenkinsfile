@@ -1,7 +1,11 @@
 pipeline {
+    libraries {
+        // Load library 
+        lib('github.com/MartinNowak/jenkins-cancel-build-on-update@master')
+    }
     options {
         disableConcurrentBuilds()
-    }	
+    }
     agent {
 	    kubernetes {
 	        // Change the name of jenkins-maven label to be able to use yaml configuration snippet
@@ -39,6 +43,9 @@ spec:
           HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
         }
         steps {
+          // cancel any previous builds   
+          cancelPreviousBuild()            
+            
           container('maven') {
             sh "make preview"
           }
