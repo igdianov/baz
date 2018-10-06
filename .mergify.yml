@@ -4,4 +4,5 @@ rules:
       required_status_checks:
         strict: true
         contexts:
-          - continuous-integration/jenkins/pr-head
+      auto-deployment:
+        required_pull_request_reviews: null
