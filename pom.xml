@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>igdianov</groupId>
     <artifactId>foobar</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.6</version>
     
     <properties>
         <foo.version>0.0.4</foo.version>
