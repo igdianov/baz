@@ -4,5 +4,4 @@ rules:
       required_status_checks:
         strict: true
         contexts:
-      auto-deployment:
-        required_pull_request_reviews: null
+      required_pull_request_reviews: null
