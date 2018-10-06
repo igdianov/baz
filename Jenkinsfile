@@ -1,7 +1,7 @@
 pipeline {
 /*
     options {
-	// Disable conccurent builds 
+	// Disable conccurent builds in order to build pull request commits sequentially
         disableConcurrentBuilds()
     }
 */    
