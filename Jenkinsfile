@@ -1,10 +1,8 @@
 pipeline {
-/*
     options {
 	// Disable conccurent builds in order to build pull request commits sequentially
         disableConcurrentBuilds()
     }
-*/    
     agent {
 	    kubernetes {
 	        // Change the name of jenkins-maven label to be able to use yaml configuration snippet
@@ -42,10 +40,6 @@ spec:
           HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
         }
         steps {
-          // try cancel any previous builds from https://github.com/MartinNowak/jenkins-cancel-build-on-update
-          // uses implictly loaded shared library from global config
-          cancelPreviousBuild()            
-            
           container('maven') {
             sh "make preview"
           }
