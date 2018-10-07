@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     
     <properties>
-        <foo.version>0.0.9</foo.version>
+        <foo.version>0.0.10</foo.version>
         <bar.version>0.0.11</bar.version>
     </properties>
 
