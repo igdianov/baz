@@ -9,7 +9,7 @@
     
     <properties>
         <foo.version>0.0.10</foo.version>
-        <bar.version>0.0.12</bar.version>
+        <bar.version>0.0.13</bar.version>
     </properties>
 
     <build>
