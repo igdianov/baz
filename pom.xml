@@ -5,25 +5,12 @@
     <groupId>igdianov</groupId>
     <artifactId>foobar</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     
     <properties>
         <foo.version>0.0.9</foo.version>
         <bar.version>0.0.11</bar.version>
     </properties>
-    
-
-    <dependencies>
-        <dependency>
-            <groupId>igdianov</groupId>
-            <artifactId>foo</artifactId>
-            <version>${foo.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>igdianov</groupId>
-            <artifactId>bar</artifactId>
-            <version>${bar.version}</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -43,6 +30,39 @@
                             </rules>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>enforce-reactor</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <fail>true</fail>
+                            <rules>
+                                <reactorModuleConvergence>
+                                    <message>The reactor is not valid</message>
+                                    <ignoreModuleDependencies>false</ignoreModuleDependencies>
+                                </reactorModuleConvergence>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <fail>true</fail>
+                            <rules>
+                                <requireSameVersions>
+                                    <dependencies>
+                                        <dependency>org.springframework:*</dependency>
+                                    </dependencies>
+                                </requireSameVersions>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    
+                                        
                 </executions>
             </plugin>
 
@@ -54,4 +74,8 @@
         </plugins>
     </build>
 
+    <modules>
+        <module>foobar-tests</module>
+        <module>foobar-dependencies</module>
+    </modules>
 </project>
